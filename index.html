@@ -238,6 +238,22 @@ footer .legal{font-size:12px;color:#9fbfb0;line-height:1.5}
 .vfoot{position:absolute;left:0;right:0;bottom:0;padding:12px max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));display:flex;gap:10px;background:linear-gradient(transparent,rgba(13,26,25,.95) 40%)}
 .vfoot .btn{flex:1;min-height:48px;font-size:14px}
 body.lock{overflow:hidden}
+.gate{position:fixed;inset:0;z-index:70;background:rgba(1,45,43,.72);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(16px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.gate[hidden]{display:none!important}
+.gbox{background:var(--card);border-radius:22px;max-width:640px;margin:0 auto;padding:20px;position:relative;display:grid;gap:12px}
+.gbox h3{font-size:24px;font-weight:900;padding-right:44px}
+.gbox > p{color:var(--muted);font-size:15px}
+.gclose{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:12px;border:0;background:var(--paper);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.gclose svg{width:20px;height:20px}
+.g-perks{display:flex;flex-wrap:wrap;gap:6px}
+.g-perks span{font-size:12px;font-weight:800;color:var(--brand);background:var(--paper);border-radius:999px;padding:6px 10px}
+.g-wa{justify-self:center;font-size:14px;font-weight:800;color:var(--wa);padding:8px}
+.pr .lockp{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--orange);color:#fff;font:800 13px var(--body);border-radius:10px;padding:10px 12px;cursor:pointer;white-space:nowrap}
+.pr .lockp svg{width:15px;height:15px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:80;background:var(--ink);color:#fff;font-weight:800;font-size:14px;padding:12px 18px;border-radius:12px;box-shadow:0 10px 28px rgba(1,45,43,.35);max-width:calc(100% - 32px);text-align:center}
+.toast[hidden]{display:none!important}
+.welcome{display:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:14px}
+.welcome.on{display:block}
 </style>
 </head>
 <body>
@@ -311,7 +327,8 @@ body.lock{overflow:hidden}
     <div class="sec-head">
       <span class="eyebrow">Catálogos de novembro</span>
       <h2>Abra no celular ou baixe em PDF</h2>
-      <p>Toque na capa para folhear. Preços à vista e a prazo em 28 dias, válidos até 30/11 ou enquanto durarem os estoques.</p>
+      <p>Toque na capa para folhear. Na primeira vez pedimos um cadastro rápido, depois fica tudo liberado neste celular. Preços válidos até 30/11 ou enquanto durarem os estoques.</p>
+      <p class="welcome" id="welcome"></p>
     </div>
     <div class="cats" id="cats"></div>
   </div>
@@ -465,7 +482,7 @@ body.lock{overflow:hidden}
         </fieldset>
         <button class="btn btn-wa" type="submit">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
-          Enviar pelo WhatsApp
+          <span id="f-btn-txt">Enviar pelo WhatsApp</span>
         </button>
         <p class="sent" id="sent">O WhatsApp abriu com sua mensagem pronta. Confira e toque em enviar para concluir.</p>
         <p class="form-note">Seus dados são usados só para o contato comercial da Ekotruck, conforme a <a href="https://cdn.prod.website-files.com/68bdeed4a33e6cfaeaef7d00/6a8c57be9c104428bfc6a2b3_69f3626492d6f8401cee6e4d_Politica-Geral-de-Privacidade-WLM_29052025.pdf" target="_blank" rel="noopener">política de privacidade WLM</a>.</p>
@@ -507,6 +524,19 @@ body.lock{overflow:hidden}
   </div>
 </div>
 
+<div class="gate" id="gate" hidden role="dialog" aria-modal="true" aria-labelledby="g-title">
+  <div class="gbox">
+    <button class="gclose" id="g-close" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <span class="eyebrow">Preços de feira</span>
+    <h3 id="g-title">Cadastre-se para ver catálogos e preços</h3>
+    <p>Leva 30 segundos e libera tudo neste celular. Você só preenche uma vez.</p>
+    <div class="g-perks"><span>4 catálogos completos</span><span>214 preços à vista</span><span>PDFs para baixar</span></div>
+    <div id="g-slot"></div>
+    <a class="g-wa js-wa" data-msg="Olá! Conheci a Ekotruck na Fenatran e quero falar com um consultor." href="#" target="_blank" rel="noopener">Prefiro falar direto no WhatsApp</a>
+  </div>
+</div>
+<div class="toast" id="toast" hidden role="status"></div>
+
 <script>
 /* ===== CONFIGURAÇÃO: troque aqui ===== */
 var WHATS_SDR = "5511942234297";   // WhatsApp que recebe os contatos (SDR). Só números, com 55 + DDD.
@@ -542,12 +572,23 @@ var FAMILIES = [
   {t:"Lubrificantes", s:"Petronas Urania, Texaco", q:"oleo motor|óleo motor|oleo de motor|oleo sint"}
 ];
 
-function waLink(msg){ return "https://wa.me/" + WHATS_SDR + "?text=" + encodeURIComponent(msg); }
+/* ===== cadastro (fica salvo neste celular) ===== */
+var PERFIL = null;
+try{ PERFIL = JSON.parse(localStorage.getItem("eko_fenatran_lead") || "null"); }catch(e){ PERFIL = null; }
+function liberado(){ return !!PERFIL; }
+function assinatura(){
+  if(!PERFIL) return "";
+  return "\n\n— " + [PERFIL.nome, PERFIL.empresa, PERFIL.cnpj ? "CNPJ " + PERFIL.cnpj : "", PERFIL.segmento,
+    PERFIL.caminhoes ? PERFIL.caminhoes + " caminhões" : "", PERFIL.cidade].filter(Boolean).join(" · ");
+}
+function waLink(msg){ return "https://wa.me/" + WHATS_SDR + "?text=" + encodeURIComponent(msg + assinatura()); }
+function waLinkPuro(msg){ return "https://wa.me/" + WHATS_SDR + "?text=" + encodeURIComponent(msg); }
+function atualizaWa(){ document.querySelectorAll(".js-wa").forEach(function(a){ a.href = waLink(a.getAttribute("data-msg")||"Olá!"); }); }
 function norm(s){ return (s||"").toString().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""); }
 function catOf(it){ return CATS.filter(function(c){return c.id===CAT_BY[it[0]];})[0]; }
 function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 
-document.querySelectorAll(".js-wa").forEach(function(a){ a.href = waLink(a.getAttribute("data-msg")||"Olá!"); });
+atualizaWa();
 document.querySelectorAll(".js-wa-num").forEach(function(s){
   var n = WHATS_SDR.replace(/^55/,""); s.textContent = "(" + n.slice(0,2) + ") " + n.slice(2,n.length-4) + "-" + n.slice(-4);
 });
@@ -563,7 +604,7 @@ CATS.forEach(function(c){
       '<img src="'+c.id+'-capa.jpg" alt="Capa do catálogo '+esc(c.t)+'" loading="lazy" width="420" height="594"><span class="pg">'+c.pages+' págs</span></button>' +
     '<div class="body"><h3>'+esc(c.t)+'</h3><p class="sub">'+esc(c.s)+'</p><p class="val">'+n+' itens · '+c.val+'</p></div>' +
     '<div class="acts"><button class="btn btn-or" type="button" data-open="'+c.id+'">Abrir no celular</button>' +
-    '<a class="btn btn-line" href="'+c.pdf+'" download>Baixar PDF</a></div>';
+    '<a class="btn btn-line js-pdf" href="'+c.pdf+'" download>Baixar PDF</a></div>';
   catsEl.appendChild(el);
 });
 
@@ -604,7 +645,11 @@ document.getElementById("v-close").addEventListener("click", function(){ closeCa
 window.addEventListener("popstate", function(){ closeCat(true); });
 document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeCat(false); });
 document.addEventListener("click", function(e){
-  var b = e.target.closest("[data-open]"); if(b){ openCat(b.getAttribute("data-open"), +(b.getAttribute("data-page")||1)); }
+  var b = e.target.closest("[data-open]");
+  if(b){ var id = b.getAttribute("data-open"), pg = +(b.getAttribute("data-page")||1); exigeCadastro(function(){ openCat(id, pg); }); return; }
+  var d = e.target.closest(".js-pdf");
+  if(d && !liberado()){ e.preventDefault(); var href = d.getAttribute("href"); exigeCadastro(function(){ baixar(href); }); return; }
+  if(e.target.closest(".js-unlock")){ exigeCadastro(function(){ render(); }); }
 });
 
 /* ===== busca ===== */
@@ -631,9 +676,11 @@ function render(){
   }
   resEl.innerHTML = list.slice(0,limit).map(function(it){
     var c = catOf(it);
-    var msg = "Olá! Vi na Fenatran e quero cotar:\n" + it[2] + "\nCód: " + it[3] + " · Marca: " + it[4] + "\nCatálogo " + c.t + " · À vista R$ " + it[5];
+    var msg = "Olá! Vi na Fenatran e quero cotar:\n" + it[2] + "\nCód: " + it[3] + " · Marca: " + it[4] + "\nCatálogo " + c.t + (liberado() ? " · À vista R$ " + it[5] : "");
+    var preco = liberado() ? '<small>À VISTA</small><b>R$ '+esc(it[5])+'</b>'
+      : '<button class="lockp js-unlock" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Ver preço</button>';
     return '<div class="res"><div><p class="nm">'+esc(it[2])+'</p><p class="meta"><span>Cód <span class="mono">'+esc(it[3])+'</span></span><span>'+esc(it[4])+'</span><span>'+esc(c.t)+'</span></p></div>' +
-      '<div class="pr"><small>À VISTA</small><b>R$ '+esc(it[5])+'</b></div>' +
+      '<div class="pr">'+preco+'</div>' +
       '<div class="acts"><a class="q" target="_blank" rel="noopener" href="'+waLink(msg)+'"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>Cotar</a>' +
       '<button class="v" type="button" data-open="'+c.id+'" data-page="'+it[1]+'">Ver no catálogo</button></div></div>';
   }).join("");
@@ -695,22 +742,63 @@ form.addEventListener("submit", function(e){
     (v("f-cam") ? "Nº de caminhões: " + v("f-cam") + "\n" : "") +
     "Cidade/UF: " + v("f-cid") + "\nTelefone: " + v("f-tel") + "\nE-mail: " + v("f-mail") +
     (ints.length ? "\nInteresse: " + ints.join(", ") : "");
+  var modoGate = form.dataset.modo === "gate";
+  PERFIL = {nome:v("f-nome"), empresa:v("f-emp"), cnpj:v("f-cnpj"), segmento:v("f-seg"), caminhoes:v("f-cam"), cidade:v("f-cid"), telefone:v("f-tel"), email:v("f-mail")};
+  try{ localStorage.setItem("eko_fenatran_lead", JSON.stringify(PERFIL)); }catch(err){}
   if(FORM_URL){
     var dados = {nome:v("f-nome"), empresa:v("f-emp"), cnpj:v("f-cnpj"), segmento:v("f-seg"),
       caminhoes:v("f-cam"), cidade:v("f-cid"), telefone:v("f-tel"), email:v("f-mail"), interesse:ints.join(", "),
-      origem:"Landing Fenatran 2026"};
+      origem: modoGate ? "Landing Fenatran 2026 · cadastro catálogos" : "Landing Fenatran 2026 · quero ser contatado"};
     var body = new URLSearchParams();
     Object.keys(FORM_CAMPOS).forEach(function(k){ body.append(FORM_CAMPOS[k], dados[k] || ""); });
     try{ fetch(FORM_URL, {method:"POST", mode:"no-cors", keepalive:true, body:body}).catch(function(){}); }catch(err){}
   }
-  var a = document.createElement("a"); a.href = waLink(msg); a.target = "_blank"; a.rel = "noopener";
+  atualizaWa(); boasVindas(); render();
+  if(modoGate){
+    fechaGate(); toast("Pronto, " + PERFIL.nome.split(" ")[0] + "! Catálogos e preços liberados.");
+    var acao = pendente; pendente = null; if(acao) acao();
+    return;
+  }
+  var a = document.createElement("a"); a.href = waLinkPuro(msg); a.target = "_blank"; a.rel = "noopener";
   document.body.appendChild(a); a.click(); a.remove();
   document.getElementById("sent").classList.add("on");
 });
+
+/* ===== porta de cadastro ===== */
+var gateEl = document.getElementById("gate"), slot = document.getElementById("g-slot"), formHome = form.parentNode, pendente = null, toastT = null;
+function exigeCadastro(acao){
+  if(liberado()){ acao(); return; }
+  pendente = acao; lastFocus = document.activeElement;
+  slot.appendChild(form); form.dataset.modo = "gate";
+  document.getElementById("f-btn-txt").textContent = "Liberar catálogos e preços";
+  gateEl.hidden = false; document.body.classList.add("lock"); gateEl.scrollTop = 0;
+  setTimeout(function(){ document.getElementById("f-nome").focus({preventScroll:true}); }, 50);
+}
+function fechaGate(){
+  if(gateEl.hidden) return;
+  formHome.appendChild(form); form.dataset.modo = "";
+  document.getElementById("f-btn-txt").textContent = "Enviar pelo WhatsApp";
+  gateEl.hidden = true; if(viewer.hidden) document.body.classList.remove("lock");
+  if(lastFocus) lastFocus.focus({preventScroll:true});
+}
+document.getElementById("g-close").addEventListener("click", function(){ pendente = null; fechaGate(); });
+gateEl.addEventListener("click", function(e){ if(e.target === gateEl){ pendente = null; fechaGate(); } });
+document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !gateEl.hidden){ pendente = null; fechaGate(); } });
+function baixar(href){ var a = document.createElement("a"); a.href = href; a.download = ""; document.body.appendChild(a); a.click(); a.remove(); }
+function toast(t){ var el = document.getElementById("toast"); el.textContent = t; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(function(){ el.hidden = true; }, 3500); }
+function boasVindas(){
+  var w = document.getElementById("welcome");
+  if(PERFIL){ w.textContent = "Olá, " + PERFIL.nome.split(" ")[0] + "! Catálogos e preços liberados neste celular."; w.classList.add("on"); }
+}
+if(PERFIL){
+  [["f-nome","nome"],["f-emp","empresa"],["f-cnpj","cnpj"],["f-seg","segmento"],["f-cam","caminhoes"],["f-cid","cidade"],["f-tel","telefone"],["f-mail","email"]]
+    .forEach(function(x){ var el = document.getElementById(x[0]); if(el && PERFIL[x[1]]) el.value = PERFIL[x[1]]; });
+  boasVindas();
+}
 form.querySelectorAll("input,select").forEach(function(i){ i.addEventListener("input", function(){ if(i.closest(".f") && i.closest(".f").classList.contains("bad")) setBad(i,false); }); });
 
 /* abrir catálogo direto por link: ...#catalogo-euroricambi */
-var h = location.hash.match(/^#catalogo-(\w+)/); if(h) openCat(h[1],1);
+var h = location.hash.match(/^#catalogo-(\w+)/); if(h) exigeCadastro(function(){ openCat(h[1],1); });
 </script>
 </body>
 </html>
