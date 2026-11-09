@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ekotruck na Fenatran</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ekotruck, Grupo WLM: peças Scania novas, remanufaturadas e seminovas com garantia. Catálogos Black Friday, Eko Pay e atendimento pelo WhatsApp.">
+<meta property="og:title" content="Ekotruck na Fenatran 2026">
+<meta property="og:description" content="Catálogos com preços à vista, peças seminovas com garantia e condições Black Friday. Fale com a gente no WhatsApp.">
+<meta property="og:image" content="bf-produtos.jpg">
+<meta name="theme-color" content="#012d2b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: faixa verde-escura de marca no topo, seções claras em coluna única no celular, código de peça em mono como assinatura */
+:root{
+  --ink:#012d2b;        /* verde-escuro Ekotruck */
+  --brand:#0c6d61;      /* verde Ekotruck */
+  --orange:#e06200;     /* laranja preço/garantia */
+  --mint:#a3ccab;       /* verde-claro */
+  --paper:#eaf0ec;      /* fundo claro */
+  --card:#ffffff;
+  --muted:#3d4146;
+  --line:#cfdcd4;
+  --wa:#1f9d55;
+  --display:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --body:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.mono{font-family:var(--mono)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:14px;font:800 15px/1 var(--display);text-decoration:none;border:0;cursor:pointer;letter-spacing:.01em}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-or{background:var(--orange);color:#fff}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-line{background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+
+/* topo */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--ink)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--ink);border-bottom:1px solid rgba(163,204,171,.18)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px}
+.top img{height:34px;width:auto}
+.top .btn{min-height:40px;padding:0 14px;font-size:13px;border-radius:10px}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;background:var(--mint);opacity:.08;pointer-events:none}
+.hero .wrap{display:grid;gap:28px;padding-block:28px 34px;position:relative;z-index:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.tag-o{background:var(--orange);color:#fff}
+.tag-m{background:rgba(163,204,171,.16);color:var(--mint);border:1px solid rgba(163,204,171,.35)}
+.hero h1{font-size:clamp(34px,8.6vw,58px);font-weight:900;letter-spacing:-.02em;margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--mint)}
+.hero .lead{font-size:17px;color:#d5e6dc;margin-top:14px;max-width:34em}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero .ctas .btn{flex:1 1 220px}
+.hero-art{border-radius:22px;overflow:hidden;position:relative;background:#06322f}
+.hero-art img{width:100%;height:auto}
+.hero-art .off{position:absolute;left:14px;bottom:14px;background:rgba(1,45,43,.88);border:1px solid rgba(163,204,171,.3);border-radius:14px;padding:10px 14px;line-height:1.1}
+.hero-art .off b{display:block;font:900 30px/1 var(--display);color:#fff}
+.hero-art .off span{font-size:12px;font-weight:700;color:var(--mint);letter-spacing:.04em}
+@media (min-width:860px){.hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;padding-block:56px}}
+
+/* faixa de números */
+.facts{background:var(--brand);color:#fff}
+.facts .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;padding-block:0}
+.fact{padding:18px 6px 18px 0}
+.fact b{display:block;font:900 26px/1 var(--display);font-variant-numeric:tabular-nums}
+.fact span{display:block;font-size:13px;color:#d9efe2;margin-top:6px;line-height:1.35}
+@media (min-width:760px){.facts .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+section{padding-block:44px}
+.sec-head{display:grid;gap:8px;margin-bottom:22px}
+.sec-head h2{font-size:clamp(26px,6vw,38px);font-weight:900;letter-spacing:-.015em}
+.sec-head p{color:var(--muted);max-width:40em}
+
+/* busca */
+.search{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px}
+.search label{font-weight:800;font-size:14px}
+.sfield{display:flex;align-items:center;gap:10px;background:var(--paper);border-radius:12px;padding:0 14px;border:2px solid transparent}
+.sfield:focus-within{border-color:var(--brand)}
+.sfield svg{width:20px;height:20px;color:var(--brand);flex:none}
+.sfield input{flex:1;min-width:0;border:0;background:transparent;font:600 17px var(--body);color:var(--ink);padding:14px 0;outline:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:700 13px var(--body);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.results{display:grid;gap:10px;margin-top:4px}
+.res{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:14px;border-radius:14px;background:var(--paper)}
+.res .nm{font-weight:800;font-size:15px;line-height:1.25}
+.res .meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px}
+.res .meta .mono{color:var(--ink);font-weight:600}
+.res .pr{grid-row:1/3;grid-column:2;text-align:right}
+.res .pr small{display:block;font-size:11px;font-weight:800;color:var(--orange);letter-spacing:.06em}
+.res .pr b{font:900 18px/1.1 var(--display);color:var(--orange);font-variant-numeric:tabular-nums;white-space:nowrap}
+.res .acts{grid-column:1/-1;display:flex;gap:8px;margin-top:6px}
+.res .acts a,.res .acts button{flex:1;min-height:42px;border-radius:10px;font:800 13px var(--body);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;cursor:pointer;border:0}
+.res .acts svg{width:16px;height:16px}
+.res .q{background:var(--wa);color:#fff}
+.res .v{background:var(--card);color:var(--ink);border:1.5px solid var(--line)!important}
+.hint{font-size:13px;color:var(--muted)}
+.more{justify-self:start;background:none;border:0;color:var(--brand);font:800 14px var(--body);cursor:pointer;padding:6px 0}
+
+/* catálogos */
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (min-width:860px){.cats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.cat{background:var(--card);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.cat .cover{aspect-ratio:210/297;width:100%;background:var(--paper);border:0;padding:0;cursor:pointer;position:relative;display:block}
+.cat .cover img{width:100%;height:100%;object-fit:cover}
+.cat .cover .pg{position:absolute;right:8px;bottom:8px;background:rgba(1,45,43,.85);color:#fff;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px}
+.cat .body{padding:12px;display:grid;gap:4px;flex:1;align-content:start}
+.cat h3{font-size:16px;font-weight:900}
+.cat .sub{font-size:12px;color:var(--muted);line-height:1.35}
+.cat .val{font-size:11px;font-weight:800;color:var(--brand);letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.cat .acts{display:grid;gap:8px;padding:0 12px 12px}
+.cat .acts .btn{min-height:44px;font-size:13px;padding:0 10px;border-radius:12px}
+
+/* seminovos */
+.semi{background:var(--ink);color:#fff;border-radius:24px;padding:24px;display:grid;gap:18px;position:relative;overflow:hidden}
+.semi .eyebrow{color:var(--mint)}
+.semi h2{font-size:clamp(24px,6vw,34px);font-weight:900}
+.semi p{color:#d5e6dc}
+.semi ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.semi li{background:rgba(163,204,171,.1);border:1px solid rgba(163,204,171,.25);border-radius:14px;padding:12px}
+.semi li b{display:block;font-size:15px}
+.semi li span{font-size:12px;color:var(--mint)}
+.price-bar{display:grid;gap:8px}
+.price-bar .row{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:center;gap:10px;font-size:13px;font-weight:700}
+.price-bar .track{height:30px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
+.price-bar .fill{height:100%;display:flex;align-items:center;padding-left:10px;font:800 13px var(--display);border-radius:8px}
+.price-bar .g .fill{width:100%;background:#5b6b67;color:#fff}
+.price-bar .s .fill{width:60%;background:var(--orange);color:#fff}
+@media (min-width:860px){.semi{grid-template-columns:1.1fr .9fr;padding:36px;align-items:center}.semi ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* linha completa */
+.line-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:760px){.line-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fam{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:left;cursor:pointer;display:grid;gap:4px;font-family:var(--body);color:var(--ink)}
+.fam b{font-size:15px;font-weight:800;line-height:1.2}
+.fam span{font-size:12px;color:var(--muted)}
+.fam:hover{border-color:var(--brand)}
+
+/* serviços */
+.svc{display:grid;gap:14px}
+@media (min-width:760px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.s-item{background:var(--card);border-radius:18px;padding:20px;display:grid;gap:10px;border:1px solid var(--line)}
+.s-item .ic{width:46px;height:46px;border-radius:12px;background:var(--paper);display:grid;place-items:center;color:var(--brand)}
+.s-item .ic svg{width:26px;height:26px}
+.s-item h3{font-size:19px;font-weight:900}
+.s-item p{color:var(--muted);font-size:15px}
+.s-item ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);display:grid;gap:4px}
+.s-item.pay{background:var(--ink);color:#fff;border-color:var(--ink)}
+.s-item.pay p,.s-item.pay ul{color:#d5e6dc}
+.s-item.pay .ic{background:rgba(163,204,171,.14);color:var(--mint)}
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.term{border:1px solid rgba(163,204,171,.35);border-radius:12px;padding:12px}
+.term small{display:block;font-size:11px;font-weight:800;color:var(--mint);letter-spacing:.06em;text-transform:uppercase}
+.term b{display:block;font:900 24px/1.1 var(--display);margin-top:4px}
+.term span{font-size:12px;color:#d5e6dc}
+.cycle{margin-top:22px;background:var(--card);border-radius:18px;padding:18px;border:1px solid var(--line)}
+.cycle h3{font-size:17px;font-weight:900;margin-bottom:12px}
+.cycle ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;counter-reset:c}
+@media (min-width:760px){.cycle ol{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.cycle li{counter-increment:c;font-size:13px;color:var(--muted);line-height:1.35}
+.cycle li::before{content:counter(c);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-weight:900;font-size:13px;margin-bottom:6px}
+.cycle li b{display:block;color:var(--ink);font-size:14px}
+
+/* WLM */
+.wlm{display:grid;gap:20px;align-items:center}
+.wlm .big{font:900 clamp(72px,22vw,140px)/.85 var(--display);color:var(--brand);letter-spacing:-.04em}
+.wlm .big small{display:block;font-size:14px;letter-spacing:.12em;color:var(--orange);margin-top:10px;font-weight:800}
+.wlm p{color:var(--muted);max-width:38em}
+.wlm .pts{display:grid;gap:10px;margin-top:14px}
+.wlm .pt{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.wlm .pt svg{width:22px;height:22px;color:var(--brand);flex:none;margin-top:1px}
+.wlm .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+@media (min-width:860px){.wlm{grid-template-columns:.8fr 1.2fr}}
+
+/* formulário */
+.formbox{background:var(--card);border-radius:22px;padding:20px;border:2px solid var(--line)}
+form{display:grid;gap:14px}
+.grid2{display:grid;gap:14px}
+@media (min-width:640px){.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.f{display:grid;gap:6px}
+.f label{font-size:13px;font-weight:800}
+.f label i{font-style:normal;color:var(--orange)}
+.f input,.f select{width:100%;min-height:50px;border-radius:12px;border:2px solid var(--line);background:var(--paper);padding:0 14px;font:600 16px var(--body);color:var(--ink)}
+.f input:focus,.f select:focus{outline:none;border-color:var(--brand);background:#fff}
+.f .err{font-size:12px;color:#b3261e;font-weight:700}
+.f.bad input,.f.bad select{border-color:#b3261e}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+legend{font-size:13px;font-weight:800;margin-bottom:6px}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;background:var(--paper)}
+.checks input{width:18px;height:18px;accent-color:var(--brand)}
+.form-note{font-size:12px;color:var(--muted)}
+.sent{display:none;background:#e3f3e8;border:1px solid #9fd2b0;border-radius:12px;padding:14px;font-size:14px}
+.sent.on{display:block}
+
+/* rodapé */
+footer{background:var(--ink);color:#d5e6dc;padding-block:34px calc(110px + env(safe-area-inset-bottom,0px));font-size:14px}
+footer .wrap{display:grid;gap:18px}
+footer img{height:40px;width:auto}
+footer a{color:#fff;font-weight:700}
+footer .links{display:flex;flex-wrap:wrap;gap:10px 18px}
+footer .legal{font-size:12px;color:#9fbfb0;line-height:1.5}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:35;background:var(--wa);color:#fff;border-radius:999px;min-height:56px;padding:0 20px;display:flex;align-items:center;gap:10px;font:800 15px var(--display);text-decoration:none;box-shadow:0 10px 28px rgba(1,45,43,.35)}
+.fab svg{width:24px;height:24px}
+
+/* visualizador de catálogo */
+.viewer{position:fixed;inset:0;z-index:60;background:#0d1a19;display:flex;flex-direction:column}
+.viewer[hidden]{display:none!important}
+.vbar{display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(12px,env(safe-area-inset-left,0px));background:var(--ink);color:#fff}
+.vbar h3{font-size:15px;font-weight:800;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vbar .cnt{font-size:12px;color:var(--mint);font-weight:700;font-variant-numeric:tabular-nums}
+.vbtn{width:44px;height:44px;border-radius:12px;border:0;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;text-decoration:none}
+.vbtn svg{width:22px;height:22px}
+.pages{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px max(12px,env(safe-area-inset-left,0px)) 90px;display:grid;gap:12px;justify-items:center}
+.pages img{width:100%;max-width:760px;height:auto;aspect-ratio:210/297;background:#1b2b29;border-radius:6px}
+.vfoot{position:absolute;left:0;right:0;bottom:0;padding:12px max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));display:flex;gap:10px;background:linear-gradient(transparent,rgba(13,26,25,.95) 40%)}
+.vfoot .btn{flex:1;min-height:48px;font-size:14px}
+body.lock{overflow:hidden}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo-ekotruck-wlm.png" alt="Ekotruck, somos WLM" width="153" height="34">
+    <a class="btn btn-wa js-wa" data-msg="Olá! Conheci a Ekotruck na Fenatran e quero falar com um consultor." href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding-block:0">
+  <div class="wrap">
+    <div>
+      <div class="tag-row">
+        <span class="tag tag-m">Fenatran 2026 · São Paulo</span>
+        <span class="tag tag-o">Black Friday até 30/11</span>
+      </div>
+      <h1>Menos custo por quilômetro. <em>Mais caminhão rodando.</em></h1>
+      <p class="lead">Peças Scania novas, remanufaturadas e seminovas com garantia, contratos de manutenção e pagamento facilitado. Tudo para reduzir o custo total da sua frota.</p>
+      <div class="ctas">
+        <a class="btn btn-or" href="#catalogos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5A2.5 2.5 0 0 0 4 21.5"/><path d="M8 7h8M8 11h6"/></svg>
+          Ver catálogos com preços
+        </a>
+        <a class="btn btn-ghost" href="#contato">Quero ser contatado</a>
+      </div>
+    </div>
+    <figure class="hero-art" style="margin:0">
+      <img src="bf-produtos.jpg" alt="Bateria Varta, roda, alternador, motor de partida e componentes do sistema do Arla em oferta Black Friday Ekotruck" width="1000" height="531">
+      <div class="off"><span>BLACK FRIDAY EKOTRUCK</span><b>até 60% off</b></div>
+    </figure>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>80 anos</b><span>de Grupo WLM, desde 1946</span></div>
+    <div class="fact"><b>60%</b><span>do preço da genuína: é quanto custa a peça seminova</span></div>
+    <div class="fact"><b>1 ano</b><span>de garantia em peças novas, 6 meses nas seminovas</span></div>
+    <div class="fact"><b>até 10x</b><span>no Eko Pay, com 1,5% ao mês</span></div>
+  </div>
+</div>
+
+<section id="busca">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Busca rápida</span>
+      <h2>Tem o código da peça? Ache o preço agora.</h2>
+      <p><span id="total-itens">214</span> itens dos catálogos de novembro, com preço à vista. Digite o código Scania ou o nome.</p>
+    </div>
+    <div class="search">
+      <label for="q">Código ou nome da peça</label>
+      <div class="sfield">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Ex.: 1960716, turbo, sensor de nox">
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por catálogo"></div>
+      <div class="results" id="results" aria-live="polite"></div>
+      <button class="more" id="more" type="button" hidden>Mostrar mais resultados</button>
+    </div>
+  </div>
+</section>
+
+<section id="catalogos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Catálogos de novembro</span>
+      <h2>Abra no celular ou baixe em PDF</h2>
+      <p>Toque na capa para folhear. Preços à vista e a prazo em 28 dias, válidos até 30/11 ou enquanto durarem os estoques.</p>
+    </div>
+    <div class="cats" id="cats"></div>
+  </div>
+</section>
+
+<section id="seminovas" style="padding-top:0">
+  <div class="wrap">
+    <div class="semi">
+      <div style="display:grid;gap:14px">
+        <span class="eyebrow">Peças seminovas · Desmonte certificado</span>
+        <h2>Componente de origem Scania pelo preço que a sua planilha de custo aceita.</h2>
+        <p>Peças retiradas, testadas e recondicionadas no nosso desmonte certificado em Lavras-MG, com 6 meses de garantia e rastreabilidade.</p>
+        <ul>
+          <li><b>Motores DC13</b><span>Completos e parciais</span></li>
+          <li><b>Caixas GRS0935R</b><span>Câmbio testado</span></li>
+          <li><b>Eixos e diferenciais</b><span>Traseiros e dianteiros</span></li>
+          <li><b>Cabines</b><span>E componentes de cabine</span></li>
+        </ul>
+      </div>
+      <div style="display:grid;gap:16px">
+        <div class="price-bar" role="img" aria-label="Comparativo de preço: peça genuína 100%, seminova Ekotruck 60%">
+          <div class="row g"><span>Genuína nova</span><div class="track"><div class="fill">100%</div></div></div>
+          <div class="row s"><span>Seminova Ekotruck</span><div class="track"><div class="fill">60%</div></div></div>
+        </div>
+        <a class="btn btn-wa js-wa" data-msg="Olá! Vi na Fenatran e quero cotar peças SEMINOVAS (motor DC13, caixa GRS0935R, eixos ou cabines). Minha necessidade:" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+          Consultar estoque de seminovas
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="linha" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Linha completa</span>
+      <h2>Do tensionador ao diferencial</h2>
+      <p>Toque numa família para ver os itens e preços. Não achou? Peça pelo WhatsApp que a gente localiza.</p>
+    </div>
+    <div class="line-grid" id="families"></div>
+  </div>
+</section>
+
+<section id="servicos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ecossistema Ekotruck</span>
+      <h2>Quatro jeitos de baixar o custo total da frota</h2>
+    </div>
+    <div class="svc">
+      <article class="s-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12A9 9 0 0 1 18.5 5.8"/><path d="M18 2v4h-4M6 22v-4h4"/></svg></div>
+        <h3>Economia circular e desmonte certificado</h3>
+        <p>Desmonte certificado em Lavras-MG, com processos ambientais e legais rastreáveis. O componente seminovo volta para a estrada testado e com garantia.</p>
+      </article>
+      <article class="s-item pay">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg></div>
+        <h3>Eko Pay</h3>
+        <p>Parcelamento direto com a Ekotruck para a compra não travar o caixa da operação.</p>
+        <div class="terms">
+          <div class="term"><small>Pedidos até R$ 100 mil</small><b>até 3x</b><span>1,5% ao mês</span></div>
+          <div class="term"><small>Acima de R$ 100 mil</small><b>até 10x</b><span>1,5% ao mês</span></div>
+        </div>
+        <p style="font-size:12px">Condições sujeitas a análise e aprovação de crédito.</p>
+      </article>
+      <article class="s-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Contratos de manutenção</h3>
+        <p>Peças, serviço e soluções de campo combinados num contrato para a sua frota. Menos parada não planejada e custo previsível por veículo.</p>
+      </article>
+      <article class="s-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg></div>
+        <h3>Compras SPOT</h3>
+        <p>Precisa de uma peça fora do catálogo? Nosso time de compras localiza, cota e responde rápido, para o caminhão não ficar parado esperando.</p>
+      </article>
+    </div>
+    <div class="cycle">
+      <h3>Como a peça seminova chega até você</h3>
+      <ol>
+        <li><b>Coleta</b>Componentes de frotas parceiras de todo o Brasil</li>
+        <li><b>Triagem</b>Avaliação técnica e viabilidade</li>
+        <li><b>Desmontagem</b>Certificada e rastreável</li>
+        <li><b>Recondicionamento</b>Padrão de qualidade original</li>
+        <li><b>Qualidade</b>Testes com laudo técnico</li>
+        <li><b>Fornecimento</b>Pronta para rodar, com garantia</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="wlm" style="padding-top:0">
+  <div class="wrap wlm">
+    <div class="big">80<small>ANOS DE GRUPO WLM</small></div>
+    <div>
+      <span class="eyebrow">Quem está por trás</span>
+      <h2 style="font-size:clamp(24px,6vw,34px);font-weight:900;margin:8px 0 12px">A solidez de um grupo de 1946 com a agilidade de uma startup</h2>
+      <p>A Ekotruck faz parte da WLM, grupo fundado em 1946 que hoje atua com soluções integradas em mobilidade e operação pesada: veículos Scania, seminovos, locação, serviços e energia, para agronegócio, logística e infraestrutura.</p>
+      <div class="pts">
+        <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Garantia de 1 ano em peças novas e 6 meses em seminovas, com troca imediata</span></div>
+        <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Marca própria Ekotruck, Euroricambi, Elring e parceiros como SKF, Haldex, Hella e Firestone</span></div>
+        <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span>Atendimento direto pelo WhatsApp, com consultor para a sua região</span></div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-or" href="Conheca-a-Ekotruck.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Baixar apresentação (PDF)
+        </a>
+        <a class="btn btn-line" href="https://www.wlm.com.br/quem-somos" target="_blank" rel="noopener">Conhecer o Grupo WLM</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Depois da feira</span>
+      <h2>Quero ser contatado</h2>
+      <p>Preencha em 30 segundos. O formulário abre o WhatsApp com seus dados prontos; é só tocar em enviar e um consultor da sua região retorna.</p>
+    </div>
+    <div class="formbox">
+      <form id="lead" novalidate>
+        <div class="grid2">
+          <div class="f"><label for="f-nome">Nome <i>*</i></label><input id="f-nome" name="nome" autocomplete="name" required></div>
+          <div class="f"><label for="f-emp">Empresa</label><input id="f-emp" name="empresa" autocomplete="organization"></div>
+          <div class="f"><label for="f-cnpj">CNPJ <i>*</i></label><input id="f-cnpj" name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00" required><span class="err" hidden>Confira o CNPJ: são 14 números.</span></div>
+          <div class="f"><label for="f-seg">Segmento <i>*</i></label>
+            <select id="f-seg" name="segmento" required>
+              <option value="">Selecione</option>
+              <option>Frotista / transportadora</option>
+              <option>Oficina mecânica</option>
+              <option>Autopeças / revenda</option>
+              <option>Caminhoneiro autônomo</option>
+              <option>Outro</option>
+            </select></div>
+          <div class="f"><label for="f-cam">Nº de caminhões</label><input id="f-cam" name="caminhoes" inputmode="numeric" placeholder="Ex.: 25"></div>
+          <div class="f"><label for="f-cid">Cidade / UF <i>*</i></label><input id="f-cid" name="cidade" autocomplete="address-level2" placeholder="Ex.: Campinas/SP" required></div>
+          <div class="f"><label for="f-tel">Telefone / WhatsApp <i>*</i></label><input id="f-tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required><span class="err" hidden>Informe DDD + número.</span></div>
+          <div class="f"><label for="f-mail">E-mail <i>*</i></label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err" hidden>Confira o e-mail.</span></div>
+        </div>
+        <fieldset>
+          <legend>Tenho interesse em</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="int" value="Peças novas">Peças novas</label>
+            <label><input type="checkbox" name="int" value="Seminovas">Seminovas</label>
+            <label><input type="checkbox" name="int" value="Contrato de manutenção">Contrato de manutenção</label>
+            <label><input type="checkbox" name="int" value="Eko Pay">Eko Pay</label>
+            <label><input type="checkbox" name="int" value="Compra SPOT">Compra SPOT</label>
+          </div>
+        </fieldset>
+        <button class="btn btn-wa" type="submit">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+          Enviar pelo WhatsApp
+        </button>
+        <p class="sent" id="sent">O WhatsApp abriu com sua mensagem pronta. Confira e toque em enviar para concluir.</p>
+        <p class="form-note">Seus dados são usados só para o contato comercial da Ekotruck, conforme a <a href="https://cdn.prod.website-files.com/68bdeed4a33e6cfaeaef7d00/6a8c57be9c104428bfc6a2b3_69f3626492d6f8401cee6e4d_Politica-Geral-de-Privacidade-WLM_29052025.pdf" target="_blank" rel="noopener">política de privacidade WLM</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-ekotruck-wlm.png" alt="Ekotruck, somos WLM" width="180" height="40">
+    <p>Economia, qualidade e performance sustentável para veículos pesados.</p>
+    <div class="links">
+      <a href="https://www.ekotruck.com" target="_blank" rel="noopener">ekotruck.com</a>
+      <a href="https://www.instagram.com/ekotruckwlm/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/ekotruck-wlm/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="js-wa" data-msg="Olá! Conheci a Ekotruck na Fenatran." href="#" target="_blank" rel="noopener">WhatsApp <span class="js-wa-num"></span></a>
+    </div>
+    <p class="legal">Ofertas válidas de 01 a 30 de novembro de 2026 ou enquanto durarem os estoques. Preços à vista; condições a prazo conforme catálogo. Condições de pagamento sujeitas à análise de crédito. Frete não incluso. Imagens meramente ilustrativas.</p>
+  </div>
+</footer>
+
+<a class="fab js-wa" data-msg="Olá! Conheci a Ekotruck na Fenatran e quero falar com um consultor." href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+  Fale conosco
+</a>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="v-title">
+  <div class="vbar">
+    <button class="vbtn" id="v-close" type="button" aria-label="Fechar catálogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h3 id="v-title">Catálogo</h3>
+    <span class="cnt" id="v-cnt"></span>
+    <a class="vbtn" id="v-dl" href="#" download aria-label="Baixar PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+  </div>
+  <div class="pages" id="v-pages"></div>
+  <div class="vfoot">
+    <a class="btn btn-wa" id="v-wa" href="#" target="_blank" rel="noopener">Cotar itens deste catálogo</a>
+  </div>
+</div>
+
+<script>
+/* ===== CONFIGURAÇÃO: troque aqui ===== */
+var WHATS_SDR = "5511942234297";   // WhatsApp que recebe os contatos (SDR). Só números, com 55 + DDD.
+/* Google Forms "Leads Fenatran" (respostas vão para a planilha vinculada) */
+var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScYXi6S8GAHC-Ye2rQCa_lLzX1QjrP2tpA8dLMP-RiHwFLMMg/formResponse";
+var FORM_CAMPOS = { nome:"entry.1262057466", empresa:"entry.1946617518", cnpj:"entry.10994573", segmento:"entry.594005416",
+  caminhoes:"entry.44998942", cidade:"entry.30643037", telefone:"entry.1552036704", email:"entry.521207501",
+  interesse:"entry.609005574", origem:"entry.516214302" };
+/* ===================================== */
+
+var CATS = [
+  {id:"ekotruck", t:"Ekotruck Black Friday", s:"Marca própria · até 60% off", pages:11, pdf:"Catalogo-Ekotruck-Black-Friday.pdf", val:"Válido até 30/11"},
+  {id:"euroricambi", t:"Euroricambi", s:"Câmbio e diferencial", pages:13, pdf:"Catalogo-Euroricambi.pdf", val:"Válido até 30/11"},
+  {id:"parceiros", t:"Parceiros", s:"SKF, Haldex, Hella, Firestone, Sachs e mais", pages:18, pdf:"Catalogo-Parceiros.pdf", val:"Válido até 30/11"},
+  {id:"elring", t:"Elring", s:"Juntas, retentores e anéis", pages:8, pdf:"Catalogo-Elring.pdf", val:"Válido até 30/11"}
+];
+var CAT_BY = {e:"ekotruck", p:"parceiros", u:"euroricambi", l:"elring"};
+/* [catálogo, página, nome, código, marca, preço à vista] */
+var ITEMS = [["e", 3, "DOSADOR DE REDUTOR (PGR)", "2001791", "Ekotruck", "1.349,99"], ["e", 3, "DOSADOR DE REDUTOR (SUPER)", "3123161", "Ekotruck", "3.999,99"], ["e", 3, "DOSADOR DE REDUTOR (NTG)", "2722701", "Ekotruck", "2.089,99"], ["e", 3, "BOMBA DE REDUTOR", "2963717", "Ekotruck", "4.649,99"], ["e", 3, "SENSOR DE NOX", "2296799", "Ekotruck", "1.199,99"], ["e", 3, "SENSOR TEMPERATURA GAS ESCAPE", "2265872", "Ekotruck", "189,99"], ["e", 3, "SENSOR DE NOX", "2659850", "Ekotruck", "1.249,99"], ["e", 4, "COXIM DA CAIXA", "2592761", "Ekotruck", "1.299,99"], ["e", 4, "COXIM DO MOTOR", "2611114", "Ekotruck", "779,99"], ["e", 4, "MOLA PNEUMATICA", "2357532.1", "Ekotruck", "749,99"], ["e", 5, "ECA", "3136620", "Ekotruck", "9.719,99"], ["e", 5, "KIT DE EMBREAGEM NOVA", "1574978", "Ekotruck", "3.189,99"], ["e", 5, "KIT DE EMBREAGEM", "1960716.2", "Ekotruck", "3.249,99"], ["e", 5, "KIT EMBREAGEM REMANUFATURADA", "1960716R", "Ekotruck", "3.199,99"], ["e", 6, "MOTOR DE PARTIDA", "2708317.1", "Ekotruck", "1.449,99"], ["e", 6, "MOTOR DE PARTIDA (SUPER)", "2675514", "Ekotruck", "3.419,99"], ["e", 6, "ALTERNADOR", "3024064.1", "Ekotruck", "1.099,99"], ["e", 6, "BATERIA 180 AMPERES", "2548145", "Varta", "1.050,00"], ["e", 6, "BATERIA 230 AMPERES", "2623394", "Varta", "1.200,00"], ["e", 7, "RADIADOR DE ÓLEO", "2793574.1", "Ekotruck", "899,99"], ["e", 7, "RADIADOR DE ÓLEO", "1753112", "Ekotruck", "999,99"], ["e", 7, "BOMBA DE ÓLEO", "2686288.1", "Ekotruck", "1.049,99"], ["e", 7, "COMPRESSOR A/C", "2951935", "Ekotruck", "1.279,99"], ["e", 7, "TURBOCOMPRESSOR", "2126714", "Ekotruck", "3.599,99"], ["e", 7, "TURBOCOMPRESSOR", "2731993", "Ekotruck", "3.599,99"], ["e", 7, "TURBOCOMPRESSOR", "2155074", "Ekotruck", "3.699,99"], ["e", 8, "TENSOR DE CORREIA", "2197002.1", "Ekotruck", "349,99"], ["e", 8, "TENSOR DE CORREIA", "2863219.1", "Ekotruck", "499,99"], ["e", 8, "POLIA COMUM GUIA, DA CORREIA AUXILIAR", "3146911.1", "Ekotruck", "179,99"], ["e", 8, "CORREIA 10PK 2495/ CORREIA POLY-V", "2447572.1", "Ekotruck", "149,99"], ["e", 9, "ALAVANCA DE FREIO", "2261825.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "2526676.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "2261826.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "2526675.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "1789563.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "1789564.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "1789567.1", "Ekotruck", "309,99"], ["e", 9, "ALAVANCA DE FREIO", "1789568.1", "Ekotruck", "309,99"], ["e", 10, "REBITE - ACO (LONA DE FREIO)", "1383468", "Ekotruck", "0,33"], ["e", 10, "RODA DELTA IMPORTADA", "600385", "Ekotruck", "1.439,99"], ["p", 3, "ALAVANCA DE FREIO", "2261826", "Haldex", "583,52"], ["p", 3, "ALAVANCA DE FREIO", "3025093", "Haldex", "1.458,01"], ["p", 3, "ALAVANCA DE FREIO", "3025094", "Haldex", "1.458,01"], ["p", 3, "ALAVANCA DE FREIO", "2009820", "Haldex", "508,05"], ["p", 3, "ALAVANCA DE FREIO", "3025095", "Haldex", "1.458,01"], ["p", 3, "ALAVANCA DE FREIO", "1789568", "Haldex", "568,94"], ["p", 3, "ALAVANCA DE FREIO", "1789567", "Haldex", "564,96"], ["p", 3, "ALAVANCA DE FREIO", "1789564", "Haldex", "599,17"], ["p", 4, "ALAVANCA DE FREIO", "1789563", "Haldex", "599,17"], ["p", 4, "ALAVANCA DE FREIO", "2261825", "Haldex", "583,52"], ["p", 4, "ALAVANCA DE FREIO", "2009819", "Haldex", "548,06"], ["p", 4, "ALAVANCA DE FREIO", "2526675", "Haldex", "523,83"], ["p", 4, "ALAVANCA DE FREIO", "2526676", "Haldex", "523,83"], ["p", 4, "KIT DO REPARO SAPATA TRASEIRA", "154259", "Momag", "163,46"], ["p", 4, "TAMBOR DE FREIO C/ ABA", "2378716", "FRUM", "1.530,71"], ["p", 4, "TAMBOR DE FREIO", "2378715", "FRUM", "1.062,64"], ["p", 5, "LONA DE FREIO 10\"", "1952578", "Cobreq - TMD", "231,95"], ["p", 5, "LONA DE FREIO 8\"", "1952577", "Cobreq - TMD", "202,02"], ["p", 5, "SAPATA DO FREIO 10\"", "1426254", "Momag", "1.218,23"], ["p", 5, "SAPATA DO FREIO 8\"", "2645688", "Momag", "693,06"], ["p", 5, "MOLA DE RETORNO", "1309465", "Momag", "24,01"], ["p", 5, "FILTRO COALESCENTE PRATA E SECADOR DE AR", "3248365", "Wabco", "219,86"], ["p", 5, "VALVULA APS", "3296774", "Wabco", "7.200,64"], ["p", 6, "CORREIA POLY-V", "2447572", "Dayco", "220,02"], ["p", 6, "TENSOR DE CORREIA", "2863219", "SKF", "643,06"], ["p", 6, "ROLO INTERMEDIARIO", "3146911", "SKF", "301,02"], ["p", 6, "CORREIA POLY-V", "1888468", "Gates", "125,01"], ["p", 7, "TIGELA (COPO FILTRO DO RACOR)", "2438747", "Parker", "109,37"], ["p", 7, "BOMBA DE OLEO", "2686288", "Schadek", "1.414,70"], ["p", 7, "BOMBA DO SISTEMA ARREFECIMENTO", "2310615", "Schadek", "690,06"], ["p", 7, "MANGUEIRA", "2661796", "JVS", "71,50"], ["p", 7, "BOMBA DO SISTEMA ARREFECIMENTO", "1787120", "KS", "600,06"], ["p", 7, "CAMISA DE CILINDRO", "2254875", "KS / MAHLE", "399,04"], ["p", 7, "SENSOR DE ROTACOES DO MOTOR", "1457303", "Truckmecanic", "163,28"], ["p", 7, "SENSOR VELOCIDADE ROTACAO", "1457304", "Truckmecanic", "163,31"], ["p", 8, "CONJ 2 ROLAMENTOS ROLETES CONICOS", "1817256", "SKF", "1.071,28"], ["p", 8, "ROLAMENTO DE ESFERAS", "1360882", "SKF", "157,02"], ["p", 8, "ROLAMENTO DE RODA", "2310169", "SKF", "1.130,77"], ["p", 8, "ROLAMENTO DE ROLETES", "362226", "SKF", "378,61"], ["p", 8, "KIT ROLAMENTOS CAIXA GRS900", "VKTC42003", "SKF", "1.675,14"], ["p", 8, "KIT ROLAMENTOS DIFERENCIAL R780", "VKTC41003", "SKF", "2.316,89"], ["p", 8, "ROLAMENTO DE INSERCAO", "2742995", "SKF", "2.100,19"], ["p", 8, "KIT ROLAMENTOS DIFERENCIAL RB662", "VKTC41001", "SKF", "3.014,96"], ["p", 9, "KIT ROLAMENTOS DIFERENCIAL R885", "VKTC41009", "SKF", "3.451,95"], ["p", 9, "KIT ROLAMENTOS DIFERENCIAL R660", "VKTC42002", "SKF", "2.224,48"], ["p", 9, "ROLAMENTO DE ROLOS CONICOS", "1911817", "SKF", "210,00"], ["p", 9, "ROLAMENTO EIXO PILOTO", "1327878", "SKF", "960,13"], ["p", 10, "SENSOR DE NOX", "2659849", "Hella", "1.324,66"], ["p", 10, "SENSOR DE NOX", "2294291", "Hella", "1.280,00"], ["p", 10, "SENSOR DE NOX", "2294290", "Hella", "1.280,00"], ["p", 10, "BICO INJETOR DO ARLA", "2702782", "Hella", "450,00"], ["p", 11, "MOTOR DE PARTIDA", "2708317", "Hella/Ikro", "1.739,00"], ["p", 11, "LANTERNA TRASEIRA (LD)", "2860827", "TLUX", "428,11"], ["p", 11, "LANTERNA TRASEIRA (LE)", "2860829", "TLUX", "428,11"], ["p", 11, "ALTERNADOR", "3024064", "Hella", "1.457,75"], ["p", 11, "LAMPADA HALOGENA H21 24V", "1372698", "Hella", "28,50"], ["p", 11, "LAMPADA H7 24V", "1905137", "Hella", "38,54"], ["p", 11, "BATERIA 180 AMPERES", "2548145", "Varta", "1.050,00"], ["p", 11, "BATERIA 230 AMPERES", "2623394", "Varta", "1.200,00"], ["p", 12, "FAROL PRINCIPAL - LE", "2674384", "Hella", "3.600,32"], ["p", 12, "FAROL PRINCIPAL - LD", "2674385", "Hella", "3.600,32"], ["p", 12, "GIROFLEX ÂMBAR DE LED", "1501284", "DNI", "371,50"], ["p", 12, "RODA DE DISCO 1200 X 24 4.500KG", "1760128", "Maxion", "3.441,50"], ["p", 12, "RODA DE DISCO 1200 X 24 5.000KG", "2537980", "Maxion", "3.055,52"], ["p", 13, "CAMARA DE AR (MOLA PNEUMATICA)", "1424231", "Firestone", "241,62"], ["p", 13, "CAMARA DE AR (MOLA PNEUMATICA)", "1476415", "Firestone", "230,88"], ["p", 13, "MOLA PNEUMATICA", "1908097", "Firestone", "625,50"], ["p", 13, "MOLA PNEUMATICA", "2517987", "Firestone", "803,56"], ["p", 13, "AMORTECEDOR DE AR DE CABINE (DIANTEIRO)", "3094487", "Firestone", "668,50"], ["p", 13, "AMORTECEDOR DE AR DE CABINE (TRASEIRO)", "3094522", "Firestone", "687,36"], ["p", 13, "MOLA PNEUMATICA", "2357532", "Firestone", "942,11"], ["p", 13, "BOMBA DE PALHETAS (BOMBA HIDRAULICA)", "2994150", "Evamo", "2.288,22"], ["p", 14, "BOMBA DE PALHETAS (BOMBA HIDRAULICA) - 2", "2394786", "Evamo", "4.703,51"], ["p", 14, "BOMBA DE PALHETAS (BOMBA HIDRAULICA) - 1", "2394785", "Evamo", "4.016,00"], ["p", 14, "BOMBA DE PALHETAS (BOMBA HIDRAULICA)", "2394784", "Evamo", "3.676,00"], ["p", 14, "ISOLADOR DE VIBRACOES", "1778532", "REI", "320,03"], ["p", 15, "KIT DE EMBREAGEM VALEO", "1960716", "Valeo", "4.980,00"], ["p", 15, "KIT DE EMBREAGEM SUPER - SACHS NOVA", "575311", "ZF / SACHS", "9.223,00"], ["p", 15, "KIT EMBREAGEM SACHS", "1960716.1", "ZF / SACHS", "4.980,00"], ["p", 15, "KIT DE EMBREAGEM - SACHS NOVA", "575211", "ZF / SACHS", "9.090,00"], ["p", 15, "CONJUNTO CRUZETA E MANCAL", "3014654", "STAHL", "951,29"], ["p", 16, "ÓLEO MOTOR E7 BD 20 LITROS", "2003149", "Petronas", "582,67"], ["p", 16, "OLEO DE MOTOR LDF-3", "2388303", "Petronas", "868,57"], ["p", 16, "OLEO DE MOTOR LDF-4", "3142033", "Petronas", "794,23"], ["p", 16, "OLEO SINT 5W40 API", "1958808", "Texaco", "88,54"], ["p", 17, "PARA-LAMA", "1435075", "BL Fibras", "295,02"], ["p", 17, "PALHETA DO LIMPADOR COM ESGUICHO - 28''", "2753171", "DYNA", "55,00"], ["p", 17, "PARA-LAMA", "2274635", "Rodoplast", "295,02"], ["u", 2, "FLANGE DO CUBO DA RODA TRASEIRA C/10 FUROS", "2376432", "Euroricambi", "635,41"], ["u", 2, "SEMI EIXO LADO DIR./ESQ.S/ BLOQ. 24 ESTRIAS", "1761195", "Euroricambi", "1.103,55"], ["u", 2, "CRUZETA DO DIFERENCIAL", "1444818", "Euroricambi", "835,85"], ["u", 2, "SEMIEIXO ESQUERDO", "1796906", "Euroricambi", "1.986,62"], ["u", 3, "SEMIEIXO DIREITO", "1796908", "Euroricambi", "2.000,47"], ["u", 3, "ENGRENAGEM SATELITE 11 DENTES (2ª/3ªGERAÇÃO)", "1519392", "Euroricambi", "309,00"], ["u", 3, "ENGRENAGEM SATELITE DO BLOQUEIO", "1902202", "Euroricambi", "666,52"], ["u", 3, "EIXO DO BLOQUEIO (70MM) 24/40 24 DENTES", "2018885", "Euroricambi", "4.949,54"], ["u", 4, "ENGRENAGEM 29 DENTES", "2588074", "Euroricambi", "4.264,07"], ["u", 4, "ENGRENAGEM SATELITE 11 DENTES", "1408143", "Euroricambi", "313,74"], ["u", 4, "REPARO DA CAIXA SATELITE", "1785126KIT", "Euroricambi", "5.235,24"], ["u", 4, "ENGRENAGEM", "1745701", "Euroricambi", "4.779,42"], ["u", 5, "VOLANTE DIFERENCIAL", "1776466", "Euroricambi", "2.072,33"], ["u", 6, "REPARO DO SINCRONIZADO C/ LUVA DE 2ª/3ª/CTE", "1495269KIT", "Euroricambi", "4.091,64"], ["u", 6, "REPARO DA SINCRONIZACAO GR/GRS9001ª/2ª GER.", "1770058KIT", "Euroricambi", "4.096,26"], ["u", 6, "REPARO DA SINCRONIZAÇÃO GR/GRS900 3ª GER.", "1883363KIT", "Euroricambi", "5.015,28"], ["u", 6, "REPARO DO SINCRONIZADO DA SELETORA (4ª GERACAO 7.5°FC)", "1925293KIT", "Euroricambi", "6.011,04"], ["u", 7, "REPARO DA SINCRONIZAÇÃO DR 1ª M. GR/GRS/GRSO", "2063265KIT", "Euroricambi", "2.486,89"], ["u", 7, "REPARO DO SINCRONIZADOS/ LUVA DE 2ª/3ª/CTE", "1543357KIT", "Euroricambi", "2.871,25"], ["u", 7, "REPARO DA SINCRONIZAÇÃO GR/GRS900 3ª GER.", "1883352KIT", "Euroricambi", "9.012,27"], ["u", 7, "REPARO DO SINCRONIZADO", "1828869KIT", "Euroricambi", "4.798,48"], ["u", 8, "REPARO DO SINCRONIZADO", "1543359KIT", "Euroricambi", "4.910,36"], ["u", 8, "REPARO DO SINCRONIZADO", "1849454KIT", "Euroricambi", "3.132,98"], ["u", 8, "PINO DO DISCO DE ACOPLAMENTO DA 1A.", "1340002", "Euroricambi", "70,89"], ["u", 8, "COROA DO REDUTOR 66 D.(C/MOLAS/PINOS/ESFERAS)", "1118030", "Euroricambi", "3.364,90"], ["u", 9, "ANEL ACIONADOR DA 1A.LIVRE (12 ORELHAS)", "1533848", "Euroricambi", "131,76"], ["u", 9, "ANEL DO SINCR.DA 2A./3A./4A./SPLIT(REDUZIDA)", "1756447", "Euroricambi", "803,36"], ["u", 9, "CONE INTERMEDIARIO DA 1A. C/08 FUROS", "1466318", "Euroricambi", "739,87"], ["u", 9, "LUVA DE ENGATE DA 1A./2A./3A", "1529939", "Euroricambi", "656,05"], ["u", 10, "CONE DOS INCR. DA 1A.", "1438526", "Euroricambi", "660,14"], ["u", 10, "CONE DE ACOPL. 60 DENTES 46 ESTRIAS", "1116477", "Euroricambi", "446,01"], ["u", 10, "DISCO DE ACOPLAMENTO DA 1A (08FUROS)", "2063265", "Euroricambi", "394,19"], ["u", 10, "BOMBA DE OLEO DO CAMBIO", "2536881", "Euroricambi", "1.937,85"], ["u", 11, "DISCO DE ACOPLAMENTO DA 2A./3A.", "1495269", "Euroricambi", "1.014,86"], ["u", 11, "ENGRENAGEM DO EIXO PILOTO 29 DENTES", "1116457", "Euroricambi", "544,22"], ["u", 11, "CONE DE ACOPLAMENTO DO SINCR.", "1116475", "Euroricambi", "435,10"], ["u", 11, "EIXO PILOTO 46 DENTES", "1377307", "Euroricambi", "979,58"], ["u", 12, "REPARO DO SUPORTE PLANETARIO CAMBIO GRS900/920", "1323174KIT", "Euroricambi", "4.572,93"], ["u", 12, "CONE DE SEGURANCA", "1529950", "Euroricambi", "688,03"], ["l", 2, "RETENTOR TRASEIRO", "1757903", "Elring", "345,87"], ["l", 2, "RETENTOR SCANIA", "1528991", "Elring", "43,27"], ["l", 2, "RETENTOR DO DIFERENCIAL", "1740992", "Elring", "169,39"], ["l", 2, "RETENTOR DIANTEIRO", "1392708", "Elring", "178,28"], ["l", 2, "RETENTOR CUBO", "2057586", "Elring", "93,34"], ["l", 2, "RETENTOR CUBO", "1907845", "Elring", "278,26"], ["l", 2, "RETENTOR CAIXA VELOCIDADES", "1502384", "Elring", "157,65"], ["l", 3, "JUNTA TAMPA VALVULA SUPERIOR", "1779110", "Elring", "64,22"], ["l", 3, "JUNTA TAMPA VALVULA SUPERIOR", "1505366", "Elring", "52,97"], ["l", 3, "JUNTA TAMPA VALVULA INFERIOR", "1772475", "Elring", "73,86"], ["l", 3, "JUNTA TAMPA VALVULA INFERIOR", "1449542", "Elring", "28,09"], ["l", 3, "JUNTA TAMPA LATERAL", "1375383", "Elring", "122,25"], ["l", 3, "JUNTA TAMPA CAMARA TUCHO : BORRACHA", "2368728", "Elring", "78,26"], ["l", 3, "JUNTA RADIADOR OLEO SCANIA", "1795526", "Elring", "184,81"], ["l", 3, "JUNTA RADIADOR OLEO", "1484765", "Elring", "16,32"], ["l", 4, "JUNTA RADIADOR OLEO (METAL BORRACHA)", "2096562", "Elring", "587,26"], ["l", 4, "JUNTA RADIADOR OLEO - ORING", "1484766", "Elring", "10,20"], ["l", 4, "JUNTA RADIADOR DE OLEO METAL BORRACHA", "2096561", "Elring", "587,26"], ["l", 4, "JUNTA FILTRO OLEO", "1863303", "Elring", "77,23"], ["l", 4, "JUNTA COLETOR ADMISSAO", "1516474", "Elring", "25,13"], ["l", 4, "JUNTA COLETOR ADMISSAO", "2181274", "Elring", "38,70"], ["l", 4, "JUNTA CARTER SUPERIOR", "2252092", "Elring", "364,13"], ["l", 4, "JUNTA CARTER INFERIOR", "2252095", "Elring", "459,67"], ["l", 5, "JUNTA CARTER FILTRO OLEO", "1479872", "Elring", "45,55"], ["l", 5, "JUNTA CARTER 4 PECAS", "1520503", "Elring", "178,25"], ["l", 5, "JUNTA CARTER (BORRACHA)", "1942852", "Elring", "384,03"], ["l", 5, "JUNTA BORRACHA", "2684392", "Elring", "8,29"], ["l", 5, "JUNTA BOMBA COMBUSTIVEL", "2016583", "Elring", "8,58"], ["l", 5, "JUNTA BOMBA AGUA LADO MOTOR (BORRACHA)", "1886594", "Elring", "46,74"], ["l", 5, "JUNTA BASE TURBINA", "1801737", "Elring", "28,69"], ["l", 6, "JOGO REPARO BOMBA INJETORA SCANIA -8 CIL", "1422564", "Elring", "57,46"], ["l", 6, "JOGO JUNTA SUPERIOR S/RET", "1725112", "Elring", "166,00"], ["l", 6, "JOGO JUNTA SUPERIOR C/ RET.", "2308201", "Elring", "450,00"], ["l", 6, "JOGO JUNTA SUPERIOR C/ RET", "2308200", "Elring", "355,00"], ["l", 6, "JOGO JUNTA CARTER", "371503", "Elring", "93,68"], ["l", 6, "JOGO ANEIS INJETORES", "1932820", "Elring", "54,10"], ["l", 6, "JOGO DE JUNTA COMPLETO NTG", "465170", "Elring", "6.002,68"], ["l", 6, "JOGO COMPLETO C/ RETENTOR SCANIA DC13", "496080", "Elring", "4.622,84"], ["l", 7, "ARRUELA PROTECAO BICO INJETOR", "2042940", "Elring", "4,33"], ["l", 7, "ARRUELA CARTER", "2419091", "Elring", "23,11"], ["l", 7, "ARRUELA", "2279230", "Elring", "8,69"], ["l", 8, "ANEL VEDACAO CAPA SECA CAIXA CAMBIO", "1437280", "Elring", "78,83"], ["l", 8, "ANEL VEDACAO 142,5 X 149,2 X 3,35 (BORRA", "2349746", "Elring", "35,71"], ["l", 8, "ANEL CAMISA", "1312934", "Elring", "24,63"], ["l", 8, "ANEL CAMISA 148,5 X 156,5 X 4 (BORRACHA)", "1730424", "Elring", "25,71"], ["l", 8, "ANEL CAMISA 147,5 X 4 MM (EPDM)", "1328995", "Elring", "22,14"], ["l", 8, "ANEL CAMISA 144 X 2,5 MM (EPDM)", "2071088", "Elring", "29,37"]];
+
+var FAMILIES = [
+  {t:"Tensionadores, polias e correias", s:"Tensor, polia guia, Poly-V", q:"tensor|polia|correia|rolo"},
+  {t:"Catracas e freio", s:"Alavancas de freio, lonas, sapatas, tambores", q:"alavanca|lona|sapata|tambor|freio|mola de retorno"},
+  {t:"Embreagem", s:"Kits Ekotruck, Sachs, Valeo, remanufaturado", q:"embreagem|eca"},
+  {t:"Sistema do Arla", s:"Dosadores, bomba, sensores de NOx", q:"dosador|redutor|nox|arla|gas escape"},
+  {t:"Turbo e motor", s:"Turbos, bombas de óleo, radiadores", q:"turbo|bomba de oleo|bomba de óleo|radiador|camisa|arrefecimento|volante"},
+  {t:"Câmbio e diferencial", s:"Sincronizados, engrenagens, semieixos", q:"sincron|engrenagem|semi|eixo|cone|anel do sincr|luva|coroa|cruzeta|satelite|disco de acoplamento|pino"},
+  {t:"Rolamentos", s:"Roda, diferencial, caixa GRS900", q:"rolamento"},
+  {t:"Juntas e retentores", s:"Linha Elring para motores Scania", q:"junta|retentor|anel|arruela|jogo"},
+  {t:"Suspensão a ar", s:"Molas pneumáticas, amortecedor de cabine, coxins", q:"mola pneu|camara de ar|amortecedor|coxim|isolador"},
+  {t:"Elétrica e baterias", s:"Motor de partida, alternador, Varta", q:"partida|alternador|bateria|lanterna|lampada|farol|giroflex|sensor de rot|sensor veloc"},
+  {t:"Rodas e externos", s:"Rodas 1200x24, para-lamas, palhetas", q:"roda|para-lama|palheta"},
+  {t:"Lubrificantes", s:"Petronas Urania, Texaco", q:"oleo motor|óleo motor|oleo de motor|oleo sint"}
+];
+
+function waLink(msg){ return "https://wa.me/" + WHATS_SDR + "?text=" + encodeURIComponent(msg); }
+function norm(s){ return (s||"").toString().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""); }
+function catOf(it){ return CATS.filter(function(c){return c.id===CAT_BY[it[0]];})[0]; }
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+document.querySelectorAll(".js-wa").forEach(function(a){ a.href = waLink(a.getAttribute("data-msg")||"Olá!"); });
+document.querySelectorAll(".js-wa-num").forEach(function(s){
+  var n = WHATS_SDR.replace(/^55/,""); s.textContent = "(" + n.slice(0,2) + ") " + n.slice(2,n.length-4) + "-" + n.slice(-4);
+});
+document.getElementById("total-itens").textContent = ITEMS.length;
+
+/* ===== catálogos ===== */
+var catsEl = document.getElementById("cats");
+CATS.forEach(function(c){
+  var n = ITEMS.filter(function(i){return CAT_BY[i[0]]===c.id;}).length;
+  var el = document.createElement("article"); el.className = "cat";
+  el.innerHTML =
+    '<button class="cover" type="button" data-open="'+c.id+'" aria-label="Abrir catálogo '+esc(c.t)+'">' +
+      '<img src="'+c.id+'-capa.jpg" alt="Capa do catálogo '+esc(c.t)+'" loading="lazy" width="420" height="594"><span class="pg">'+c.pages+' págs</span></button>' +
+    '<div class="body"><h3>'+esc(c.t)+'</h3><p class="sub">'+esc(c.s)+'</p><p class="val">'+n+' itens · '+c.val+'</p></div>' +
+    '<div class="acts"><button class="btn btn-or" type="button" data-open="'+c.id+'">Abrir no celular</button>' +
+    '<a class="btn btn-line" href="'+c.pdf+'" download>Baixar PDF</a></div>';
+  catsEl.appendChild(el);
+});
+
+/* ===== visualizador ===== */
+var viewer = document.getElementById("viewer"), vPages = document.getElementById("v-pages"), lastFocus = null;
+function openCat(id, page){
+  var c = CATS.filter(function(x){return x.id===id;})[0]; if(!c) return;
+  lastFocus = document.activeElement;
+  document.getElementById("v-title").textContent = "Catálogo " + c.t;
+  document.getElementById("v-dl").href = c.pdf;
+  document.getElementById("v-wa").href = waLink("Olá! Estou vendo o catálogo " + c.t + " da Ekotruck (Fenatran) e quero cotar:");
+  vPages.innerHTML = "";
+  for(var i=1;i<=c.pages;i++){
+    var img = document.createElement("img");
+    img.src = c.id+"-p"+(i<10?"0":"")+i+".jpg"; img.alt = "Página "+i+" do catálogo "+c.t;
+    img.loading = i<=2 || i===page ? "eager" : "lazy"; img.width = 900; img.height = 1273; img.dataset.p = i;
+    vPages.appendChild(img);
+  }
+  document.getElementById("v-cnt").textContent = "1/" + c.pages;
+  viewer.hidden = false; document.body.classList.add("lock");
+  vPages.scrollTop = 0;
+  if(page>1){ setTimeout(function(){ var t = vPages.querySelector('[data-p="'+page+'"]'); if(t) vPages.scrollTop = t.offsetTop - 12; }, 60); }
+  document.getElementById("v-close").focus();
+  try{ history.pushState({v:1},"", "#catalogo-"+id); }catch(e){}
+}
+function closeCat(fromPop){
+  if(viewer.hidden) return;
+  viewer.hidden = true; document.body.classList.remove("lock"); vPages.innerHTML = "";
+  if(!fromPop){ try{ if(history.state && history.state.v) history.back(); }catch(e){} }
+  if(lastFocus) lastFocus.focus();
+}
+vPages.addEventListener("scroll", function(){
+  var imgs = vPages.querySelectorAll("img"), mid = vPages.scrollTop + vPages.clientHeight/2, cur = 1;
+  imgs.forEach(function(im){ if(im.offsetTop <= mid) cur = +im.dataset.p; });
+  document.getElementById("v-cnt").textContent = cur + "/" + imgs.length;
+}, {passive:true});
+document.getElementById("v-close").addEventListener("click", function(){ closeCat(false); });
+window.addEventListener("popstate", function(){ closeCat(true); });
+document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeCat(false); });
+document.addEventListener("click", function(e){
+  var b = e.target.closest("[data-open]"); if(b){ openCat(b.getAttribute("data-open"), +(b.getAttribute("data-page")||1)); }
+});
+
+/* ===== busca ===== */
+var qEl = document.getElementById("q"), resEl = document.getElementById("results"), moreEl = document.getElementById("more"), chipsEl = document.getElementById("chips");
+var activeCat = "", famRe = null, limit = 6;
+[{id:"",t:"Todos"}].concat(CATS).forEach(function(c){
+  var b = document.createElement("button"); b.type="button"; b.className="chip"; b.textContent = c.t; b.setAttribute("aria-pressed", c.id===""?"true":"false");
+  b.addEventListener("click", function(){ activeCat = c.id; chipsEl.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed","false");}); b.setAttribute("aria-pressed","true"); limit=6; render(); });
+  chipsEl.appendChild(b);
+});
+ITEMS.forEach(function(it){ it.k = norm(it[2]+" "+it[3]+" "+it[3].replace(/\./g,"")+" "+it[4]); });
+function render(){
+  var q = norm(qEl.value.trim()), terms = q.split(/\s+/).filter(Boolean);
+  var list = ITEMS.filter(function(it){
+    if(activeCat && CAT_BY[it[0]]!==activeCat) return false;
+    if(famRe && !famRe.test(norm(it[2]))) return false;
+    return terms.every(function(t){ return it.k.indexOf(t)>-1; });
+  });
+  if(!q && !famRe && !activeCat){ resEl.innerHTML = '<p class="hint">Dica: toque numa família em "Linha completa" ou digite o código que está na peça ou na nota.</p>'; moreEl.hidden = true; return; }
+  if(!list.length){
+    resEl.innerHTML = '<div class="res"><div><p class="nm">Não encontramos “'+esc(qEl.value)+'” nos catálogos.</p><p class="meta">Mande o código no WhatsApp que o time de compras SPOT localiza pra você.</p></div>' +
+      '<div class="acts"><a class="q" target="_blank" rel="noopener" href="'+waLink("Olá! Vi na Fenatran e procuro a peça: "+qEl.value)+'">Pedir cotação SPOT</a></div></div>';
+    moreEl.hidden = true; return;
+  }
+  resEl.innerHTML = list.slice(0,limit).map(function(it){
+    var c = catOf(it);
+    var msg = "Olá! Vi na Fenatran e quero cotar:\n" + it[2] + "\nCód: " + it[3] + " · Marca: " + it[4] + "\nCatálogo " + c.t + " · À vista R$ " + it[5];
+    return '<div class="res"><div><p class="nm">'+esc(it[2])+'</p><p class="meta"><span>Cód <span class="mono">'+esc(it[3])+'</span></span><span>'+esc(it[4])+'</span><span>'+esc(c.t)+'</span></p></div>' +
+      '<div class="pr"><small>À VISTA</small><b>R$ '+esc(it[5])+'</b></div>' +
+      '<div class="acts"><a class="q" target="_blank" rel="noopener" href="'+waLink(msg)+'"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg>Cotar</a>' +
+      '<button class="v" type="button" data-open="'+c.id+'" data-page="'+it[1]+'">Ver no catálogo</button></div></div>';
+  }).join("");
+  moreEl.hidden = list.length <= limit;
+  moreEl.textContent = "Mostrar mais (" + (list.length - limit) + ")";
+}
+qEl.addEventListener("input", function(){ famRe = null; limit = 6; render(); });
+moreEl.addEventListener("click", function(){ limit += 12; render(); });
+render();
+
+/* ===== famílias ===== */
+var famEl = document.getElementById("families");
+FAMILIES.forEach(function(f){
+  var re = new RegExp(norm(f.q)), n = ITEMS.filter(function(it){ return re.test(norm(it[2])); }).length;
+  var b = document.createElement("button"); b.type="button"; b.className="fam";
+  b.innerHTML = '<b>'+esc(f.t)+'</b><span>'+esc(f.s)+'</span><span style="color:var(--brand);font-weight:800">'+n+' itens com preço</span>';
+  b.addEventListener("click", function(){
+    famRe = re; qEl.value = ""; activeCat = ""; limit = 12;
+    chipsEl.querySelectorAll(".chip").forEach(function(x,i){ x.setAttribute("aria-pressed", i===0?"true":"false"); });
+    render(); document.getElementById("busca").scrollIntoView({behavior:"smooth"});
+  });
+  famEl.appendChild(b);
+});
+
+/* ===== formulário ===== */
+var form = document.getElementById("lead");
+var cnpj = document.getElementById("f-cnpj"), tel = document.getElementById("f-tel");
+cnpj.addEventListener("input", function(){
+  var d = cnpj.value.replace(/\D/g,"").slice(0,14), o = d;
+  if(d.length>2) o = d.slice(0,2)+"."+d.slice(2);
+  if(d.length>5) o = o.slice(0,6)+"."+d.slice(5);
+  if(d.length>8) o = o.slice(0,10)+"/"+d.slice(8);
+  if(d.length>12) o = o.slice(0,15)+"-"+d.slice(12);
+  cnpj.value = o;
+});
+tel.addEventListener("input", function(){
+  var d = tel.value.replace(/\D/g,"").slice(0,11), o = d;
+  if(d.length>2) o = "("+d.slice(0,2)+") "+d.slice(2);
+  if(d.length>7) o = "("+d.slice(0,2)+") "+d.slice(2,d.length-4)+"-"+d.slice(-4);
+  tel.value = o;
+});
+function setBad(input, bad){ var f = input.closest(".f"); f.classList.toggle("bad", bad); var e = f.querySelector(".err"); if(e) e.hidden = !bad; }
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  var ok = true, first = null;
+  form.querySelectorAll("[required]").forEach(function(i){
+    var bad = !i.value.trim();
+    if(i.id==="f-cnpj") bad = i.value.replace(/\D/g,"").length!==14;
+    if(i.id==="f-tel") bad = i.value.replace(/\D/g,"").length<10;
+    if(i.id==="f-mail") bad = !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim());
+    setBad(i, bad); if(bad){ ok = false; if(!first) first = i; }
+  });
+  if(!ok){ first.focus(); return; }
+  var v = function(id){ return document.getElementById(id).value.trim(); };
+  var ints = Array.prototype.map.call(form.querySelectorAll('input[name="int"]:checked'), function(x){return x.value;});
+  var msg = "Olá! Conheci a Ekotruck na Fenatran 2026 e quero ser contatado.\n\n" +
+    "Nome: " + v("f-nome") + "\n" + (v("f-emp") ? "Empresa: " + v("f-emp") + "\n" : "") +
+    "CNPJ: " + v("f-cnpj") + "\nSegmento: " + v("f-seg") + "\n" +
+    (v("f-cam") ? "Nº de caminhões: " + v("f-cam") + "\n" : "") +
+    "Cidade/UF: " + v("f-cid") + "\nTelefone: " + v("f-tel") + "\nE-mail: " + v("f-mail") +
+    (ints.length ? "\nInteresse: " + ints.join(", ") : "");
+  if(FORM_URL){
+    var dados = {nome:v("f-nome"), empresa:v("f-emp"), cnpj:v("f-cnpj"), segmento:v("f-seg"),
+      caminhoes:v("f-cam"), cidade:v("f-cid"), telefone:v("f-tel"), email:v("f-mail"), interesse:ints.join(", "),
+      origem:"Landing Fenatran 2026"};
+    var body = new URLSearchParams();
+    Object.keys(FORM_CAMPOS).forEach(function(k){ body.append(FORM_CAMPOS[k], dados[k] || ""); });
+    try{ fetch(FORM_URL, {method:"POST", mode:"no-cors", keepalive:true, body:body}).catch(function(){}); }catch(err){}
+  }
+  var a = document.createElement("a"); a.href = waLink(msg); a.target = "_blank"; a.rel = "noopener";
+  document.body.appendChild(a); a.click(); a.remove();
+  document.getElementById("sent").classList.add("on");
+});
+form.querySelectorAll("input,select").forEach(function(i){ i.addEventListener("input", function(){ if(i.closest(".f") && i.closest(".f").classList.contains("bad")) setBad(i,false); }); });
+
+/* abrir catálogo direto por link: ...#catalogo-euroricambi */
+var h = location.hash.match(/^#catalogo-(\w+)/); if(h) openCat(h[1],1);
+</script>
+</body>
+</html>
