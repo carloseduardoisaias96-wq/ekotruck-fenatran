@@ -572,6 +572,7 @@ body.lock{overflow:hidden}
 
 <script>
 /* ===== CONFIGURAÇÃO: troque aqui ===== */
+var GOATCOUNTER = "ekotruck-fenatran"; // contador de acessos: https://ekotruck-fenatran.goatcounter.com
 var WHATS_SDR = "5511942234297";   // WhatsApp que recebe os contatos (SDR). Só números, com 55 + DDD.
 /* Google Forms "Leads Fenatran" (respostas vão para a planilha vinculada) */
 var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScYXi6S8GAHC-Ye2rQCa_lLzX1QjrP2tpA8dLMP-RiHwFLMMg/formResponse";
@@ -635,6 +636,17 @@ var FAMILIES = [
   {t:"Lubrificantes", s:"Petronas Urania, Texaco", q:"oleo motor|óleo motor|oleo de motor|oleo sint"}
 ];
 
+/* ===== contador de acessos e cliques (GoatCounter) ===== */
+if(GOATCOUNTER){ var gsc = document.createElement("script"); gsc.async = true; gsc.src = "https://gc.zgo.at/count.js";
+  gsc.setAttribute("data-goatcounter", "https://" + GOATCOUNTER + ".goatcounter.com/count"); document.head.appendChild(gsc); }
+function evento(nome){ try{ if(window.goatcounter && window.goatcounter.count) window.goatcounter.count({path:nome, title:nome, event:true}); }catch(e){} }
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a"); if(!a) return;
+  var h = a.getAttribute("href") || "";
+  if(h.indexOf("wa.me") > -1) evento(a.closest(".sp") ? "whatsapp-seminovo" : a.classList.contains("q") ? "whatsapp-cotar-peca" : "whatsapp");
+  else if(/\.pdf$/i.test(h) && liberado()) evento("baixou-pdf");
+}, true);
+
 /* ===== cadastro (fica salvo neste celular) ===== */
 var PERFIL = null;
 try{ PERFIL = JSON.parse(localStorage.getItem("eko_fenatran_lead") || "null"); }catch(e){ PERFIL = null; }
@@ -674,6 +686,7 @@ CATS.forEach(function(c){
 /* ===== visualizador ===== */
 var viewer = document.getElementById("viewer"), vPages = document.getElementById("v-pages"), lastFocus = null;
 function openCat(id, page){
+  evento("abriu-catalogo-" + id);
   var c = CATS.filter(function(x){return x.id===id;})[0]; if(!c) return;
   lastFocus = document.activeElement;
   document.getElementById("v-title").textContent = "Catálogo " + c.t;
@@ -807,6 +820,7 @@ form.addEventListener("submit", function(e){
     "Cidade/UF: " + v("f-cid") + "\nTelefone: " + v("f-tel") + "\nE-mail: " + v("f-mail") +
     (ints.length ? "\nInteresse: " + ints.join(", ") : "");
   var modoGate = form.dataset.modo === "gate";
+  evento(modoGate ? "cadastro-catalogos" : "quero-ser-contatado");
   PERFIL = {nome:v("f-nome"), empresa:v("f-emp"), cnpj:v("f-cnpj"), segmento:v("f-seg"), caminhoes:v("f-cam"), cidade:v("f-cid"), telefone:v("f-tel"), email:v("f-mail")};
   try{ localStorage.setItem("eko_fenatran_lead", JSON.stringify(PERFIL)); }catch(err){}
   if(FORM_URL){
@@ -848,7 +862,7 @@ function fechaGate(){
 document.getElementById("g-close").addEventListener("click", function(){ pendente = null; fechaGate(); });
 gateEl.addEventListener("click", function(e){ if(e.target === gateEl){ pendente = null; fechaGate(); } });
 document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !gateEl.hidden){ pendente = null; fechaGate(); } });
-function baixar(href){ var a = document.createElement("a"); a.href = href; a.download = ""; document.body.appendChild(a); a.click(); a.remove(); }
+function baixar(href){ evento("baixou-pdf"); var a = document.createElement("a"); a.href = href; a.download = ""; document.body.appendChild(a); a.click(); a.remove(); }
 function toast(t){ var el = document.getElementById("toast"); el.textContent = t; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(function(){ el.hidden = true; }, 3500); }
 function boasVindas(){
   var w = document.getElementById("welcome");
